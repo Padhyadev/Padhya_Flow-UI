@@ -1,0 +1,399 @@
+/* ========================================
+   ADMIN DASHBOARD STYLES
+   ======================================== */
+
+.admin-dashboard {
+    background: #f9fafb;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+.admin-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Page Header */
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.admin-page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.admin-page-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Info Box (About System) */
+.admin-info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    border-radius: 12px;
+    border: 1px solid #e0f2fe;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.admin-info-icon {
+    font-size: 48px;
+    color: var(--admin-primary);
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+}
+
+.admin-info-content h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.admin-info-content p {
+    margin: 0 0 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #64748b;
+    max-width: 800px;
+}
+
+.admin-info-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-primary {
+    background: var(--admin-primary);
+    color: white;
+}
+
+.tag-success {
+    background: var(--admin-success);
+    color: white;
+}
+
+.tag-purple {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* Stats Grid - 2 Rows × 2 Columns */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Exactly 2 columns */
+    grid-template-rows: auto auto;
+    /* Exactly 2 rows, then wrap */
+    gap: 24px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Make 5th card span full width */
+.admin-stat-card:nth-child(5) {
+    grid-column: 1 / -1;
+    /* Span both columns */
+}
+
+/* Card Base Styles - No Fixed Widths */
+.admin-stat-card {
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* Icon Right, Info Left */
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    /* Consistent height */
+    width: 100%;
+    /* Full width of grid cell */
+    border: none;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    gap: 20px;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Gradients */
+.admin-stat-card.bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+}
+
+.admin-stat-card.bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.admin-stat-card.bg-c-yellow {
+    background: linear-gradient(45deg, #FFB64D, #ffcb80);
+}
+
+.admin-stat-card.bg-c-pink {
+    background: linear-gradient(45deg, #FF5370, #ff869a);
+}
+
+.admin-stat-card.bg-c-violet {
+    background: linear-gradient(45deg, #7c3aed, #a78bfa);
+}
+
+
+/* Decorative Circles */
+.admin-stat-card::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    top: -20px;
+    right: -20px;
+    z-index: 1;
+}
+
+.admin-stat-card::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: 40px;
+    right: -40px;
+    z-index: 1;
+}
+
+
+/* Icon Styling */
+.admin-stat-icon-wrapper {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 32px;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.admin-stat-card:hover .admin-stat-icon-wrapper {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Info Section */
+.admin-stat-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+    position: relative;
+    min-width: 0;
+    /* Critical for wrapping text in flex container */
+}
+
+.admin-stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.admin-stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+.admin-stat-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: auto;
+    padding-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.admin-stat-action i {
+    font-size: 12px;
+}
+
+.admin-stat-card:hover .admin-stat-action {
+    color: #fff;
+    gap: 12px;
+}
+
+/* Fallbacks & overrides to ensure cleanliness */
+.admin-stat-top {
+    display: contents;
+}
+
+/* Hide legacy elements if they appear */
+.admin-stat-card::before,
+.admin-stat-card::after {
+    pointer-events: none;
+}
+
+/* Accent Bar - Removed for cleaner design */
+.admin-stat-card::before {
+    display: none;
+}
+
+/* Ensure the old styles don't conflict */
+.admin-stat-badge,
+.stat-value,
+.admin-stat-footer {
+    display: none !important;
+}
+
+.icon-primary {
+    background: #eff6ff;
+    color: var(--admin-primary);
+}
+
+.icon-success {
+    background: #f0fdf4;
+    color: var(--admin-success);
+}
+
+.icon-warning {
+    background: #fffbeb;
+    color: var(--admin-warning);
+}
+
+.icon-danger {
+    background: #fef2f2;
+    color: var(--admin-danger);
+}
+
+.admin-stat-card.primary .admin-stat-icon {
+    background: #eff6ff;
+    color: var(--admin-primary);
+}
+
+.admin-stat-card.success .admin-stat-icon {
+    background: #f0fdf4;
+    color: var(--admin-success);
+}
+
+.admin-stat-card.warning .admin-stat-icon {
+    background: #fffbeb;
+    color: var(--admin-warning);
+}
+
+.admin-stat-card.danger .admin-stat-icon {
+    background: #fef2f2;
+    color: var(--admin-danger);
+}
+
+.admin-stat-card.pointer {
+    cursor: pointer;
+}
+
+.admin-stat-card {
+    position: relative;
+    padding-bottom: 50px;
+    /* Space for footer */
+}
+
+.admin-stat-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--admin-primary);
+    font-weight: 600;
+}
+
+.admin-stat-footer i {
+    transition: transform 0.2s;
+}
+
+.admin-stat-card:hover .admin-stat-footer i {
+    transform: translateX(4px);
+}
+
+.admin-stat-content {
+    flex: 1;
+}
+
+.admin-stat-content h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px;
+    text-align: center;
+}
+
+.admin-stat-content p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Dashboard Bottom Grid */
+.admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+/* Mobile Responsive Overrides are handled in admin-responsive.css */

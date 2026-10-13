@@ -1,0 +1,129 @@
+/* ========================================
+   REPORTS PAGE STYLES
+   ======================================== */
+
+.admin-report-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.admin-report-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: var(--admin-gray-50);
+    border-radius: var(--admin-radius);
+    border: 2px solid var(--admin-gray-200);
+    transition: var(--admin-transition);
+}
+
+.admin-report-stat:hover {
+    border-color: var(--admin-primary);
+    background: var(--admin-primary-bg);
+}
+
+.admin-report-stat .label {
+    font-size: 13px;
+    color: var(--admin-gray-600);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-report-stat .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--admin-gray-900);
+    line-height: 1;
+}
+
+.admin-conversion-rate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.admin-conversion-rate .rate-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--admin-primary);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.admin-conversion-rate .rate-label {
+    font-size: 14px;
+    color: var(--admin-gray-600);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-quick-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-quick-action-btn {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 20px;
+    background: var(--admin-gray-50);
+    border: 2px solid var(--admin-gray-200);
+    border-radius: var(--admin-radius);
+    text-decoration: none;
+    color: var(--admin-gray-900);
+    transition: var(--admin-transition);
+    font-weight: 600;
+}
+
+.admin-quick-action-btn:hover {
+    background: var(--admin-primary-bg);
+    border-color: var(--admin-primary);
+    color: var(--admin-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--admin-shadow-md);
+}
+
+.admin-quick-action-btn i {
+    font-size: 28px;
+}
+
+.admin-quick-action-btn span {
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-report-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-report-stat .value {
+        font-size: 28px;
+    }
+
+    .admin-conversion-rate .rate-value {
+        font-size: 40px;
+    }
+
+    .admin-quick-actions {
+        flex-direction: column;
+    }
+
+    .admin-quick-action-btn {
+        width: 100%;
+    }
+}

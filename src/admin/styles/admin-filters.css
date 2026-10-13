@@ -1,0 +1,98 @@
+/* ========================================
+   FILTERS & SEARCH - RESPONSIVE
+   ======================================== */
+
+.admin-filters {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.admin-search-box i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--admin-gray-400);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.admin-search-box input {
+    width: 100%;
+    padding: 12px 16px 12px 48px;
+    border: 2px solid var(--admin-gray-200);
+    border-radius: var(--admin-radius);
+    font-size: 15px;
+    transition: var(--admin-transition);
+    font-weight: 500;
+}
+
+.admin-search-box input:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.admin-filters select {
+    padding: 12px 40px 12px 16px;
+    border: 2px solid var(--admin-gray-200);
+    border-radius: var(--admin-radius);
+    font-size: 15px;
+    font-weight: 500;
+    background: white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: var(--admin-transition);
+    min-width: 150px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: var(--admin-gray-700);
+}
+
+.admin-filters select:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.admin-filters select:hover {
+    border-color: var(--admin-gray-300);
+    background-color: var(--admin-gray-50);
+}
+
+.admin-filters select option {
+    padding: 12px;
+    font-size: 15px;
+    color: var(--admin-gray-900);
+    background: white;
+}
+
+/* Responsive Filters */
+@media (max-width: 768px) {
+    .admin-filters {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .admin-search-box {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .admin-filters select {
+        width: 100%;
+        min-width: 100%;
+    }
+}
